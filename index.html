@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Judicialização de Planos de Saúde — Relatório 2026</title>
+<style>
+  :root {
+    --navy: #0d3b66;
+    --blue: #1a4d7e;
+    --accent: #e6a817;
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --muted: #5a6b7b;
+    --border: #dde3ea;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--bg); display: flex; min-height: 100vh; }
+  /* Sidebar */
+  .sidebar { width: 280px; background: var(--navy); color: #fff; padding: 24px 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; flex-shrink: 0; }
+  .sidebar .brand { padding: 0 24px 20px; border-bottom: 1px solid rgba(255,255,255,.15); margin-bottom: 12px; }
+  .sidebar .brand h1 { font-size: 15px; line-height: 1.4; }
+  .sidebar .brand .sub { font-size: 11px; opacity: .8; margin-top: 4px; }
+  .sidebar nav a { display: block; padding: 10px 24px; color: rgba(255,255,255,.85); text-decoration: none; font-size: 13px; border-left: 3px solid transparent; transition: all .15s; }
+  .sidebar nav a:hover { background: rgba(255,255,255,.08); color: #fff; }
+  .sidebar nav a.active { background: rgba(255,255,255,.12); border-left-color: var(--accent); color: #fff; font-weight: 600; }
+  /* Main */
+  .main { flex: 1; padding: 32px 40px; max-width: 900px; }
+  .main h2 { color: var(--navy); font-size: 22px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+  .main h3 { color: var(--blue); font-size: 16px; margin: 20px 0 8px; }
+  .main p { line-height: 1.6; margin-bottom: 12px; }
+  .main ul, .main ol { padding-left: 22px; margin-bottom: 12px; }
+  .main li { margin-bottom: 6px; line-height: 1.5; }
+  .kpi { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
+  .kpi-box { flex: 1 1 150px; background: var(--card); border-left: 4px solid var(--navy); border-radius: 6px; padding: 12px 16px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .kpi-box .num { font-size: 24px; font-weight: 700; color: var(--navy); }
+  .kpi-box .label { font-size: 12px; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; background: var(--card); }
+  th { background: var(--navy); color: #fff; text-align: left; padding: 8px 10px; }
+  td { border: 1px solid var(--border); padding: 8px 10px; vertical-align: top; }
+  tr:nth-child(even) td { background: #f7f9fb; }
+  .note { background: #fff8e6; border-left: 4px solid var(--accent); padding: 10px 14px; font-size: 13px; margin: 16px 0; }
+  .tag { display: inline-block; background: #e0e6ec; color: var(--navy); border-radius: 12px; padding: 2px 10px; font-size: 11px; margin: 2px; }
+  .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+  .section { display: none; }
+  .section.active { display: block; animation: fade .3s ease; }
+  @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  /* Mobile */
+  @media (max-width: 768px) {
+    body { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; position: static; padding: 16px 0; }
+    .sidebar .brand { padding: 0 16px 12px; }
+    .sidebar nav { display: flex; flex-wrap: wrap; }
+    .sidebar nav a { padding: 8px 12px; border-left: none; border-bottom: 2px solid transparent; font-size: 12px; }
+    .sidebar nav a.active { border-bottom-color: var(--accent); }
+    .main { padding: 20px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="brand">
+    <h1>Judicialização de Planos de Saúde</h1>
+    <div class="sub">Recorde 2026 · Posição dos Tribunais</div>
+  </div>
+  <nav id="nav">
+    <a href="#" data-sec="resumo" class="active">Resumo Executivo</a>
+    <a href="#" data-sec="causas">Principais Causas</a>
+    <a href="#" data-sec="stf">STF — ADI 7.265</a>
+    <a href="#" data-sec="stj">STJ</a>
+    <a href="#" data-sec="tjpe-sumulas">TJPE — Súmulas</a>
+    <a href="#" data-sec="tjpe-casos">TJPE — Casos</a>
+    <a href="#" data-sec="impacto">Impacto e Tendências</a>
+    <a href="#" data-sec="fontes">Fontes</a>
+  </nav>
+</aside>
+
+<main class="main">
+
+  <!-- RESUMO -->
+  <section id="resumo" class="section active">
+    <h2>Resumo Executivo</h2>
+    <p>Em <strong>2026</strong> ocorreu uma virada histórica: pela primeira vez o Brasil processa <strong>mais planos de saúde do que o SUS</strong>. Até junho, foram <strong>181 mil novos processos contra operadoras</strong>, ante <strong>164 mil</strong> contra a saúde pública (dados do CNJ). Quem processa o plano tem <strong>~82% de chances de ganhar</strong>.</p>
+    <p>O grosso das demandas <strong>não</strong> é remédio de milhões para doença rara — é <strong>quimioterapia, imunoterapia, internação e cirurgia</strong> em que a auditoria da operadora contesta o que o médico pediu. No centro da briga está o <strong>rol da ANS</strong> e sua interpretação.</p>
+
+    <div class="kpi">
+      <div class="kpi-box"><div class="num">181 mil+</div><div class="label">novos processos contra planos (até jun/2026)</div></div>
+      <div class="kpi-box"><div class="num">10,4%</div><div class="label">acima da judicialização do SUS</div></div>
+      <div class="kpi-box"><div class="num">87%</div><div class="label">de procedência das ações (tribunais estaduais)</div></div>
+      <div class="kpi-box"><div class="num">R$ 5 bi</div><div class="label">despesa das operadoras com judicialização</div></div>
+    </div>
+
+    <p><strong>Fim de 2025:</strong> o STF fixou <strong>5 critérios</strong> (ADI 7.265) para decidir quando a operadora deve pagar por algo fora do rol. As operadoras esperam queda de novos processos em 1–2 anos após a adaptação.</p>
+  </section>
+
+  <!-- CAUSAS -->
+  <section id="causas" class="section">
+    <h2>Principais Causas das Demandas Judiciais</h2>
+    <ul>
+      <li><strong>Negativa de cobertura de tratamentos médico-hospitalares (43%)</strong> — quimio, imuno, internação, cirurgia; auditoria contesta prescrição.</li>
+      <li><strong>Negativa de cobertura fora do rol da ANS</strong> — tratamentos modernos não listados.</li>
+      <li><strong>Pedidos de medicamentos (15%)</strong> — oncológicos orais (Lei 12.880/2013), doenças raras.</li>
+      <li><strong>Reajustes abusivos e questões contratuais</strong> — faixa etária, coparticipação, cancelamento.</li>
+      <li><strong>Tratamentos para TEA/autismo</strong> — terapias multidisciplinares, ABA, acompanhante escolar, reembolso integral.</li>
+      <li><strong>Home care</strong> — negativa de assistência domiciliar.</li>
+      <li><strong>Doenças preexistentes e carência</strong> (urgência/emergência).</li>
+      <li><strong>Próteses, órteses e stents</strong> — negativa de cobertura.</li>
+    </ul>
+    <p><strong>Dados do CNJ (Futuro da Saúde, 11/08/2026):</strong> 43% das ações de saúde suplementar são pedidos de tratamentos médico-hospitalares; 15% são pedidos de medicamentos; o restante envolve reajustes e questões contratuais. Cinco estados concentram 72% dos processos: SP, BA, RJ, <strong>PE</strong> e MG.</p>
+  </section>
+
+  <!-- STF -->
+  <section id="stf" class="section">
+    <h2>STF — ADI 7.265 (18/09/2025, Rel. Min. Barroso)</h2>
+    <p>O rol da ANS é <strong>taxativo com exceções controladas</strong> (taxatividade mitigada). Para cobrir tratamento fora do rol, são necessários <strong>5 requisitos cumulativos</strong>:</p>
+    <ol>
+      <li>Prescrição por médico/odontólogo assistente habilitado.</li>
+      <li>Inexistência de negativa expressa da ANS e ausência de análise pendente de atualização do rol.</li>
+      <li>Ausência de alternativa terapêutica adequada já incluída no rol.</li>
+      <li>Comprovação de eficácia e segurança (medicina baseada em evidências).</li>
+      <li>Registro do produto/tratamento na <strong>Anvisa</strong>.</li>
+    </ol>
+    <div class="note"><strong>Atenção:</strong> em 2026 o STF vem <strong>anulando decisões</strong> que mandaram cobrir tratamento baseando-se só na prescrição médica, sem provar os demais requisitos. Não basta a receita — é preciso prova técnica robusta.</div>
+  </section>
+
+  <!-- STJ -->
+  <section id="stj" class="section">
+    <h2>Posição do STJ</h2>
+    <ul>
+      <li><strong>Tema 1.365 (mar/2026):</strong> a simples negativa indevida de cobertura <strong>não gera dano moral presumido automaticamente</strong> — é preciso comprovar abalo concreto. Ressalva: urgência/emergência e cancelamento indevido seguem justificando reparação.</li>
+      <li><strong>REsp 2.100.768/MG:</strong> estando a enfermidade abrangida pela cobertura, a operadora não pode restringir métodos prescritos por profissionais habilitados, salvo experimental ou sem eficácia.</li>
+      <li><strong>Súmula 608/STJ:</strong> devolução de valores pagos a maior sujeita-se à prescrição trienal (art. 206, §3º, IV, CC).</li>
+    </ul>
+  </section>
+
+  <!-- TJPE SUMULAS -->
+  <section id="tjpe-sumulas" class="section">
+    <h2>Posição do TJPE — Súmulas de Saúde</h2>
+    <table>
+      <tr><th>Súmula</th><th>Enunciado</th></tr>
+      <tr><td><strong>35</strong></td><td>Negativa de cobertura fundada em cláusula abusiva pode ensejar indenização por dano moral.</td></tr>
+      <tr><td><strong>54</strong></td><td>Abusiva a negativa de cobertura de próteses e órteses vinculadas a procedimento cirúrgico, ainda que excluídas/limitadas no contrato.</td></tr>
+      <tr><td><strong>11</strong></td><td>Abusiva a negativa de cobertura de stent, ainda que expressamente excluída do contrato.</td></tr>
+      <tr><td><strong>8</strong></td><td>Abusiva a negativa de cobertura de doença preexistente quando o usuário não foi submetido a prévio exame médico, salvo má-fé.</td></tr>
+      <tr><td><strong>136</strong></td><td>Abusiva a negativa de internamento para cirurgia de urgência/emergência, ainda que em carência.</td></tr>
+      <tr><td><strong>113</strong></td><td>Abusiva a cláusula de coparticipação que implique limitação temporal de internação psiquiátrica (dependente químico).</td></tr>
+      <tr><td><strong>102</strong></td><td>Extinto o vínculo laboral, a operadora deve dispor plano individual/familiar sem novos prazos de carência e no mesmo valor.</td></tr>
+      <tr><td><strong>172</strong></td><td>Operadora responde solidariamente por falhas de médicos/hospitais credenciados.</td></tr>
+      <tr><td><strong>7</strong></td><td>Abusiva a exclusão contratual de assistência médico domiciliar (home care).</td></tr>
+    </table>
+  </section>
+
+  <!-- TJPE CASOS -->
+  <section id="tjpe-casos" class="section">
+    <h2>Casos Emblemáticos do TJPE</h2>
+    <ul>
+      <li><strong>1ª Câmara Cível (28/02/2023, Ap. 0005578-45.2014.8.17.0990):</strong> manteve condenação de R$ 50 mil (R$ 10 mil danos morais + R$ 40 mil despesas) a paciente com insuficiência renal que teve negado procedimento (stent vascular) sob alegação de "experimental" e "fora do rol". Rel. Des. João José Rocha Targino. Aplicou Súmulas 54 e 35 do TJPE. Dano moral <em>in re ipsa</em>.</li>
+      <li><strong>3ª Câmara Cível (19/11/2019, NPU 0006384-45.2011.8.11.0001):</strong> condenou operadora por negar <strong>home care</strong> a paciente idosa (Alzheimer/Parkinson). Rel. Des. Eduardo Sertório. Aplicou Súmula 7/TJPE. Dano moral presumido.</li>
+      <li><strong>Apelação 0006329-72.2024.8.17.2480:</strong> abusiva a negativa de cobertura por ausência de previsão contratual/restrição à rede para tratamento de beneficiário com <strong>TEA</strong> (técnica ABA + acompanhamento terapêutico escolar). Devido <strong>reembolso integral</strong> de despesas em rede particular quando inexistente/inapta a rede credenciada. Dano moral configurado.</li>
+    </ul>
+  </section>
+
+  <!-- IMPACTO -->
+  <section id="impacto" class="section">
+    <h2>Impacto Financeiro e Tendências</h2>
+    <p>A judicialização virou <strong>parte do funcionamento</strong> dos planos de saúde no Brasil. Tratamentos pagos por ordem judicial (fora da conta atuarial) voltam como <strong>reajuste</strong> para a base de clientes. No limite, encarece o plano e pode <strong>desaguar de volta na saúde pública</strong>.</p>
+    <p><strong>Tendência:</strong> com os critérios do STF (ADI 7.265) e o Tema 1.365 do STJ, espera-se <strong>queda de novos processos em 1–2 anos</strong>, mas com <strong>exigência de prova técnica robusta</strong> (não basta prescrição médica).</p>
+  </section>
+
+  <!-- FONTES -->
+  <section id="fontes" class="section">
+    <h2>Fontes</h2>
+    <ul>
+      <li>TikTok @investnewsbr — vídeo original</li>
+      <li>CNJ — Painel de Estatísticas Processuais de Direito à Saúde</li>
+      <li>Futuro da Saúde — "Judicialização na saúde suplementar ultrapassa a do SUS em 2026" (11/08/2026)</li>
+      <li>Conjur — "87% das ações contra planos de saúde são julgadas procedentes"</li>
+      <li>STF — ADI 7.265 (notícias.stf.jus.br)</li>
+      <li>STJ — Tema 1.365 (recursos repetitivos)</li>
+      <li>TJPE — Comitê Estadual de Saúde (súmulas) e portal de notícias</li>
+      <li>Rosenbaum Advogados; Noviello; Mesko Dias Advogados</li>
+    </ul>
+    <div class="footer">
+      Relatório gerado por Hermes Agent · 25/08/2026 · Fonte: TikTok @investnewsbr + portais de direito e imprensa
+    </div>
+  </section>
+
+</main>
+
+<script>
+  const nav = document.getElementById('nav');
+  const sections = document.querySelectorAll('.section');
+  nav.addEventListener('click', (e) => {
+    if (e.target.tagName !== 'A') return;
+    e.preventDefault();
+    const target = e.target.dataset.sec;
+    document.querySelectorAll('#nav a').forEach(a => a.classList.remove('active'));
+    e.target.classList.add('active');
+    sections.forEach(s => s.classList.toggle('active', s.id === target));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>
