@@ -6,55 +6,77 @@
 <title>Judicialização de Planos de Saúde — Relatório 2026</title>
 <style>
   :root {
-    --navy: #0d3b66;
-    --blue: #1a4d7e;
-    --accent: #e6a817;
-    --bg: #f4f6f8;
-    --card: #ffffff;
-    --text: #1a1a1a;
-    --muted: #5a6b7b;
-    --border: #dde3ea;
+    --navy: #0d3b66; --blue: #1a4d7e; --accent: #e6a817;
+    --red: #d64545; --green: #2e7d4f; --teal: #2a9d8f;
+    --bg: #f4f6f8; --card: #ffffff; --text: #1a1a1a;
+    --muted: #5a6b7b; --border: #dde3ea;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--bg); display: flex; min-height: 100vh; }
-  /* Sidebar */
-  .sidebar { width: 280px; background: var(--navy); color: #fff; padding: 24px 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; flex-shrink: 0; }
-  .sidebar .brand { padding: 0 24px 20px; border-bottom: 1px solid rgba(255,255,255,.15); margin-bottom: 12px; }
-  .sidebar .brand h1 { font-size: 15px; line-height: 1.4; }
+  .sidebar { width: 260px; background: var(--navy); color: #fff; padding: 24px 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; flex-shrink: 0; }
+  .sidebar .brand { padding: 0 20px 20px; border-bottom: 1px solid rgba(255,255,255,.15); margin-bottom: 12px; }
+  .sidebar .brand h1 { font-size: 14px; line-height: 1.4; }
   .sidebar .brand .sub { font-size: 11px; opacity: .8; margin-top: 4px; }
-  .sidebar nav a { display: block; padding: 10px 24px; color: rgba(255,255,255,.85); text-decoration: none; font-size: 13px; border-left: 3px solid transparent; transition: all .15s; }
+  .sidebar nav a { display: block; padding: 10px 20px; color: rgba(255,255,255,.85); text-decoration: none; font-size: 13px; border-left: 3px solid transparent; transition: all .15s; }
   .sidebar nav a:hover { background: rgba(255,255,255,.08); color: #fff; }
   .sidebar nav a.active { background: rgba(255,255,255,.12); border-left-color: var(--accent); color: #fff; font-weight: 600; }
-  /* Main */
-  .main { flex: 1; padding: 32px 40px; max-width: 900px; }
-  .main h2 { color: var(--navy); font-size: 22px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
-  .main h3 { color: var(--blue); font-size: 16px; margin: 20px 0 8px; }
+  .main { flex: 1; padding: 32px 40px; max-width: 980px; }
+  .main h2 { color: var(--navy); font-size: 22px; margin: 6px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+  .main h3 { color: var(--blue); font-size: 16px; margin: 20px 0 10px; }
   .main p { line-height: 1.6; margin-bottom: 12px; }
   .main ul, .main ol { padding-left: 22px; margin-bottom: 12px; }
   .main li { margin-bottom: 6px; line-height: 1.5; }
   .kpi { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
   .kpi-box { flex: 1 1 150px; background: var(--card); border-left: 4px solid var(--navy); border-radius: 6px; padding: 12px 16px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
-  .kpi-box .num { font-size: 24px; font-weight: 700; color: var(--navy); }
+  .kpi-box .num { font-size: 22px; font-weight: 700; color: var(--navy); }
   .kpi-box .label { font-size: 12px; color: var(--muted); }
   table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; background: var(--card); }
   th { background: var(--navy); color: #fff; text-align: left; padding: 8px 10px; }
   td { border: 1px solid var(--border); padding: 8px 10px; vertical-align: top; }
   tr:nth-child(even) td { background: #f7f9fb; }
   .note { background: #fff8e6; border-left: 4px solid var(--accent); padding: 10px 14px; font-size: 13px; margin: 16px 0; }
-  .tag { display: inline-block; background: #e0e6ec; color: var(--navy); border-radius: 12px; padding: 2px 10px; font-size: 11px; margin: 2px; }
   .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
   .section { display: none; }
   .section.active { display: block; animation: fade .3s ease; }
   @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-  /* Mobile */
+
+  /* === Charts (CSS puro, autocontido) === */
+  .chart-card { background: var(--card); border-radius: 8px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.06); margin: 20px 0; }
+  .chart-card h4 { font-size: 14px; color: var(--navy); margin-bottom: 4px; }
+  .chart-card .chart-cap { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .vbar { display: flex; align-items: flex-end; gap: 20px; height: 220px; padding: 0 10px; border-bottom: 2px solid var(--border); }
+  .vbar .col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; }
+  .vbar .bar-wrap { width: 100%; max-width: 70px; height: 100%; display: flex; align-items: flex-end; justify-content: center; }
+  .vbar .bar { width: 100%; background: var(--blue); border-radius: 4px 4px 0 0; position: relative; transition: all .5s; }
+  .vbar .bar .val { position: absolute; top: -24px; left: 50%; transform: translateX(-50%); font-size: 12px; font-weight: 700; color: var(--text); white-space: nowrap; }
+  .vbar .bar.alt { background: var(--teal); }
+  .vbar .bar.hot { background: var(--red); }
+  .vbar .col .lbl { font-size: 11px; color: var(--muted); text-align: center; margin-top: 8px; line-height: 1.2; }
+  /* horizontal bars */
+  .hbar { margin: 8px 0; }
+  .hbar .row { display: flex; align-items: center; margin-bottom: 8px; }
+  .hbar .lbl { width: 200px; font-size: 12px; color: var(--text); flex-shrink: 0; }
+  .hbar .track { flex: 1; background: #edf0f4; border-radius: 4px; height: 22px; position: relative; }
+  .hbar .fill { height: 100%; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px; font-size: 11px; font-weight: 700; color: #fff; min-width: 30px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 16px; margin: 12px 0 4px; font-size: 12px; color: var(--muted); }
+  .legend .item { display: flex; align-items: center; gap: 6px; }
+  .legend .sw { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+  .donut-wrap { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .donut { width: 160px; height: 160px; border-radius: 50%; position: relative; flex-shrink: 0; }
+  .donut .hole { position: absolute; inset: 34px; background: var(--card); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+  .donut .hole .pc { font-size: 22px; font-weight: 700; color: var(--navy); }
+  .donut-legend { font-size: 13px; }
+  .donut-legend .ditem { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .donut-legend .sw { width: 12px; height: 12px; border-radius: 3px; }
   @media (max-width: 768px) {
     body { flex-direction: column; }
     .sidebar { width: 100%; height: auto; position: static; padding: 16px 0; }
-    .sidebar .brand { padding: 0 16px 12px; }
     .sidebar nav { display: flex; flex-wrap: wrap; }
     .sidebar nav a { padding: 8px 12px; border-left: none; border-bottom: 2px solid transparent; font-size: 12px; }
     .sidebar nav a.active { border-bottom-color: var(--accent); }
     .main { padding: 20px 16px; }
+    .hbar .lbl { width: 110px; font-size: 11px; }
+    .vbar { gap: 10px; }
   }
 </style>
 </head>
@@ -67,6 +89,7 @@
   </div>
   <nav id="nav">
     <a href="#" data-sec="resumo" class="active">Resumo Executivo</a>
+    <a href="#" data-sec="panorama">Panorama Gráfico</a>
     <a href="#" data-sec="causas">Principais Causas</a>
     <a href="#" data-sec="stf">STF — ADI 7.265</a>
     <a href="#" data-sec="stj">STJ</a>
@@ -88,40 +111,129 @@
     <div class="kpi">
       <div class="kpi-box"><div class="num">181 mil+</div><div class="label">novos processos contra planos (até jun/2026)</div></div>
       <div class="kpi-box"><div class="num">10,4%</div><div class="label">acima da judicialização do SUS</div></div>
-      <div class="kpi-box"><div class="num">87%</div><div class="label">de procedência das ações (tribunais estaduais)</div></div>
-      <div class="kpi-box"><div class="num">R$ 5 bi</div><div class="label">despesa das operadoras com judicialização</div></div>
+      <div class="kpi-box"><div class="num">87%</div><div class="label">de procedência das ações</div></div>
+      <div class="kpi-box"><div class="num">R$ 5 bi</div><div class="label">despesa com judicialização</div></div>
     </div>
 
     <p><strong>Fim de 2025:</strong> o STF fixou <strong>5 critérios</strong> (ADI 7.265) para decidir quando a operadora deve pagar por algo fora do rol. As operadoras esperam queda de novos processos em 1–2 anos após a adaptação.</p>
   </section>
 
+  <!-- PANORAMA -->
+  <section id="panorama" class="section">
+    <h2>Panorama Gráfico</h2>
+
+    <div class="chart-card">
+      <h4>Novos processos judiciais em 2026 (até junho)</h4>
+      <div class="chart-cap">Planos de saúde ultrapassam o SUS pela primeira vez</div>
+      <div class="vbar">
+        <div class="col"><div class="bar-wrap"><div class="bar hot" style="height:100%"><span class="val">181 mil</span></div></div><div class="lbl">Planos de saúde</div></div>
+        <div class="col"><div class="bar-wrap"><div class="bar alt" style="height:90%"><span class="val">164 mil</span></div></div><div class="lbl">SUS</div></div>
+      </div>
+      <div class="legend">
+        <div class="item"><span class="sw" style="background:var(--red)"></span>Planos (saúde suplementar)</div>
+        <div class="item"><span class="sw" style="background:var(--teal)"></span>SUS (saúde pública)</div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <h4>Evolução da judicialização (novos processos/ano)</h4>
+      <div class="chart-cap">A diferença entre planos e SUS caiu de 73 mil (2024) para 8 mil (2025) e inverteu em 2026</div>
+      <div class="vbar" style="height:200px">
+        <div class="col"><div class="bar-wrap"><div class="bar" style="height:80%"><span class="val">300k</span></div></div><div class="lbl">2024<br>Planos</div></div>
+        <div class="col"><div class="bar-wrap"><div class="bar alt" style="height:100%"><span class="val">373k</span></div></div><div class="lbl">2024<br>SUS</div></div>
+        <div class="col"><div class="bar-wrap"><div class="bar" style="height:92%"><span class="val">343k</span></div></div><div class="lbl">2025<br>Planos</div></div>
+        <div class="col"><div class="bar-wrap"><div class="bar alt" style="height:94%"><span class="val">351k</span></div></div><div class="lbl">2025<br>SUS</div></div>
+        <div class="col"><div class="bar-wrap"><div class="bar hot" style="height:48%"><span class="val">181k</span></div></div><div class="lbl">2026*<br>Planos</div></div>
+        <div class="col"><div class="bar-wrap"><div class="bar alt" style="height:44%"><span class="val">164k</span></div></div><div class="lbl">2026*<br>SUS</div></div>
+      </div>
+      <div class="chart-cap">*2026 = parcial até junho (1º semestre)</div>
+    </div>
+
+    <div class="chart-card">
+      <h4>Despesas das operadoras com judicialização</h4>
+      <div class="chart-cap">Acumulado de 12 meses até o 1º trimestre de 2026</div>
+      <div class="vbar">
+        <div class="col"><div class="bar-wrap"><div class="bar" style="height:85%"><span class="val">~R$4,5bi</span></div></div><div class="lbl">12m até 2025</div></div>
+        <div class="col"><div class="bar-wrap"><div class="bar hot" style="height:100%"><span class="val">R$5bi</span></div></div><div class="lbl">12m até 1tri/2026</div></div>
+      </div>
+      <div class="chart-cap">Crescimento de ~11% no período</div>
+    </div>
+
+    <div class="chart-card">
+      <h4>Procedência das ações contra planos de saúde</h4>
+      <div class="chart-cap">Média dos tribunais estaduais</div>
+      <div class="donut-wrap">
+        <div class="donut" style="background:conic-gradient(var(--green) 0% 87%, #e0e6ec 87% 100%)">
+          <div class="hole"><div class="pc">87%</div><div style="font-size:11px;color:var(--muted)">procedência</div></div>
+        </div>
+        <div class="donut-legend">
+          <div class="ditem"><span class="sw" style="background:var(--green)"></span>Procedentes (87%)</div>
+          <div class="ditem"><span class="sw" style="background:#e0e6ec"></span>Improcedentes / outros (13%)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <h4>Concentração geográfica dos processos</h4>
+      <div class="chart-cap">5 estados concentram 72% das ações de saúde suplementar</div>
+      <div class="hbar">
+        <div class="row"><div class="lbl">São Paulo</div><div class="track"><div class="fill" style="width:100%;background:var(--navy)">30%</div></div></div>
+        <div class="row"><div class="lbl">Bahia</div><div class="track"><div class="fill" style="width:30%;background:var(--blue)">10,5%</div></div></div>
+        <div class="row"><div class="lbl">Rio de Janeiro</div><div class="track"><div class="fill" style="width:28%;background:var(--blue)">10,5%</div></div></div>
+        <div class="row"><div class="lbl">Pernambuco</div><div class="track"><div class="fill" style="width:24%;background:var(--teal)">9,5%</div></div></div>
+        <div class="row"><div class="lbl">Minas Gerais</div><div class="track"><div class="fill" style="width:22%;background:var(--blue)">8,5%</div></div></div>
+      </div>
+      <div class="chart-cap">*Valores aproximados por distribuição; PE tem alta judicialização mesmo com cobertura de 10–20% da população</div>
+    </div>
+  </section>
+
   <!-- CAUSAS -->
   <section id="causas" class="section">
     <h2>Principais Causas das Demandas Judiciais</h2>
+    <div class="chart-card">
+      <h4>Composição dos pedidos judiciais contra planos de saúde</h4>
+      <div class="chart-cap">Dados do CNJ / Fonajus (2026)</div>
+      <div class="donut-wrap">
+        <div class="donut" style="background:conic-gradient(var(--red) 0% 43%, var(--blue) 43% 72%, var(--teal) 72% 87%, #e0e6ec 87% 100%)">
+          <div class="hole"><div class="pc">100%</div><div style="font-size:10px;color:var(--muted)">das ações</div></div>
+        </div>
+        <div class="donut-legend">
+          <div class="ditem"><span class="sw" style="background:var(--red)"></span>Tratamentos médico-hospitalares (43%)</div>
+          <div class="ditem"><span class="sw" style="background:var(--blue)"></span>Reajustes e questões contratuais (29%)</div>
+          <div class="ditem"><span class="sw" style="background:var(--teal)"></span>Medicamentos (15%)</div>
+          <div class="ditem"><span class="sw" style="background:#e0e6ec"></span>Outros (13%)</div>
+        </div>
+      </div>
+    </div>
+    <h3>Tipos de demandas</h3>
     <ul>
       <li><strong>Negativa de cobertura de tratamentos médico-hospitalares (43%)</strong> — quimio, imuno, internação, cirurgia; auditoria contesta prescrição.</li>
       <li><strong>Negativa de cobertura fora do rol da ANS</strong> — tratamentos modernos não listados.</li>
       <li><strong>Pedidos de medicamentos (15%)</strong> — oncológicos orais (Lei 12.880/2013), doenças raras.</li>
-      <li><strong>Reajustes abusivos e questões contratuais</strong> — faixa etária, coparticipação, cancelamento.</li>
+      <li><strong>Reajustes abusivos e questões contratuais (29%)</strong> — faixa etária, coparticipação, cancelamento.</li>
       <li><strong>Tratamentos para TEA/autismo</strong> — terapias multidisciplinares, ABA, acompanhante escolar, reembolso integral.</li>
       <li><strong>Home care</strong> — negativa de assistência domiciliar.</li>
       <li><strong>Doenças preexistentes e carência</strong> (urgência/emergência).</li>
       <li><strong>Próteses, órteses e stents</strong> — negativa de cobertura.</li>
     </ul>
-    <p><strong>Dados do CNJ (Futuro da Saúde, 11/08/2026):</strong> 43% das ações de saúde suplementar são pedidos de tratamentos médico-hospitalares; 15% são pedidos de medicamentos; o restante envolve reajustes e questões contratuais. Cinco estados concentram 72% dos processos: SP, BA, RJ, <strong>PE</strong> e MG.</p>
   </section>
 
   <!-- STF -->
   <section id="stf" class="section">
     <h2>STF — ADI 7.265 (18/09/2025, Rel. Min. Barroso)</h2>
     <p>O rol da ANS é <strong>taxativo com exceções controladas</strong> (taxatividade mitigada). Para cobrir tratamento fora do rol, são necessários <strong>5 requisitos cumulativos</strong>:</p>
-    <ol>
-      <li>Prescrição por médico/odontólogo assistente habilitado.</li>
-      <li>Inexistência de negativa expressa da ANS e ausência de análise pendente de atualização do rol.</li>
-      <li>Ausência de alternativa terapêutica adequada já incluída no rol.</li>
-      <li>Comprovação de eficácia e segurança (medicina baseada em evidências).</li>
-      <li>Registro do produto/tratamento na <strong>Anvisa</strong>.</li>
-    </ol>
+    <div class="chart-card">
+      <h4>Os 5 requisitos cumulativos para cobertura fora do rol</h4>
+      <div class="chart-cap">Todos devem estar presentes simultaneamente</div>
+      <table>
+        <tr><th>#</th><th>Requisito</th></tr>
+        <tr><td>1</td><td>Prescrição por médico/odontólogo assistente habilitado</td></tr>
+        <tr><td>2</td><td>Inexistência de negativa expressa da ANS e ausência de análise pendente de atualização do rol</td></tr>
+        <tr><td>3</td><td>Ausência de alternativa terapêutica adequada já incluída no rol</td></tr>
+        <tr><td>4</td><td>Comprovação de eficácia e segurança (medicina baseada em evidências)</td></tr>
+        <tr><td>5</td><td>Registro do produto/tratamento na <strong>Anvisa</strong></td></tr>
+      </table>
+    </div>
     <div class="note"><strong>Atenção:</strong> em 2026 o STF vem <strong>anulando decisões</strong> que mandaram cobrir tratamento baseando-se só na prescrição médica, sem provar os demais requisitos. Não basta a receita — é preciso prova técnica robusta.</div>
   </section>
 
@@ -166,6 +278,18 @@
   <section id="impacto" class="section">
     <h2>Impacto Financeiro e Tendências</h2>
     <p>A judicialização virou <strong>parte do funcionamento</strong> dos planos de saúde no Brasil. Tratamentos pagos por ordem judicial (fora da conta atuarial) voltam como <strong>reajuste</strong> para a base de clientes. No limite, encarece o plano e pode <strong>desaguar de volta na saúde pública</strong>.</p>
+    <div class="chart-card">
+      <h4>Ciclo vicioso da judicialização</h4>
+      <div class="chart-cap">Como as ordens judiciais retroalimentam o custo do plano</div>
+      <table>
+        <tr><th>Etapa</th><th>Efeito</th></tr>
+        <tr><td>1. Tratamento negado</td><td>Auditoria contesta cobertura (fora do rol ou "experimental")</td></tr>
+        <tr><td>2. Ordem judicial</td><td>Plano é obrigado a pagar tratamento não previsto na conta atuarial</td></tr>
+        <tr><td>3. Custo repassado</td><td>Valor volta como <strong>reajuste</strong> para toda a base de clientes</td></tr>
+        <tr><td>4. Plano encarece</td><td>Muitos usuários não conseguem manter; migram para o SUS</td></tr>
+        <tr><td>5. Pressão no SUS</td><td>Saúde pública absorve a demanda, aumentando a judicialização do sistema</td></tr>
+      </table>
+    </div>
     <p><strong>Tendência:</strong> com os critérios do STF (ADI 7.265) e o Tema 1.365 do STJ, espera-se <strong>queda de novos processos em 1–2 anos</strong>, mas com <strong>exigência de prova técnica robusta</strong> (não basta prescrição médica).</p>
   </section>
 
