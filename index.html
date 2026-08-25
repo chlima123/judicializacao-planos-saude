@@ -106,13 +106,13 @@
   <!-- RESUMO -->
   <section id="resumo" class="section active">
     <h2>Resumo Executivo</h2>
-    <p>Em <strong>2026</strong> ocorreu uma virada histórica: pela primeira vez o Brasil processa <strong>mais planos de saúde do que o SUS</strong>. Até junho, foram <strong>181 mil novos processos contra operadoras</strong>, ante <strong>164 mil</strong> contra a saúde pública (dados do CNJ). Quem processa o plano tem <strong>~82% de chances de ganhar</strong>.</p>
+    <p>Em <strong>2026</strong> ocorreu uma virada histórica: pela primeira vez o Brasil processa <strong>mais planos de saúde do que o SUS</strong>. Até junho, foram <strong>181 mil novos processos contra operadoras</strong>, ante <strong>164 mil</strong> contra a saúde pública (dados do CNJ — painel dinâmico, registrar data de extração). Historicamente, a procedência foi de <strong>~82% na Justiça Estadual</strong> e <strong>87% no recorte agregado</strong> da saúde suplementar (dados CNJ) — são <strong>taxas históricas</strong>, não "chance individual de ganhar".</p>
     <p>O grosso das demandas <strong>não</strong> é remédio de milhões para doença rara — é <strong>quimioterapia, imunoterapia, internação e cirurgia</strong> em que a auditoria da operadora contesta o que o médico pediu. No centro da briga está o <strong>rol da ANS</strong> e sua interpretação.</p>
 
     <div class="kpi">
       <div class="kpi-box"><div class="num">181 mil+</div><div class="label">novos processos contra planos (até jun/2026)</div></div>
       <div class="kpi-box"><div class="num">10,4%</div><div class="label">acima da judicialização do SUS</div></div>
-      <div class="kpi-box"><div class="num">87%</div><div class="label">de procedência das ações</div></div>
+      <div class="kpi-box"><div class="num">87%</div><div class="label">procedência (recorte agregado CNJ)</div></div>
       <div class="kpi-box"><div class="num">R$ 5 bi</div><div class="label">despesa com judicialização</div></div>
     </div>
 
@@ -162,7 +162,7 @@
 
     <div class="chart-card">
       <h4>Procedência das ações contra planos de saúde</h4>
-      <div class="chart-cap">Média dos tribunais estaduais</div>
+      <div class="chart-cap">Recorte agregado da saúde suplementar (CNJ); na Justiça Estadual, ~82%</div>
       <div class="donut-wrap">
         <div class="donut" style="background:conic-gradient(var(--green) 0% 87%, #e0e6ec 87% 100%)">
           <div class="hole"><div class="pc">87%</div><div style="font-size:11px;color:var(--muted)">procedência</div></div>
@@ -176,15 +176,15 @@
 
     <div class="chart-card">
       <h4>Concentração geográfica dos processos</h4>
-      <div class="chart-cap">5 estados concentram 72% das ações de saúde suplementar</div>
-      <div class="hbar">
-        <div class="row"><div class="lbl">São Paulo</div><div class="track"><div class="fill" style="width:100%;background:var(--navy)">30%</div></div></div>
-        <div class="row"><div class="lbl">Bahia</div><div class="track"><div class="fill" style="width:30%;background:var(--blue)">10,5%</div></div></div>
-        <div class="row"><div class="lbl">Rio de Janeiro</div><div class="track"><div class="fill" style="width:28%;background:var(--blue)">10,5%</div></div></div>
-        <div class="row"><div class="lbl">Pernambuco</div><div class="track"><div class="fill" style="width:24%;background:var(--teal)">9,5%</div></div></div>
-        <div class="row"><div class="lbl">Minas Gerais</div><div class="track"><div class="fill" style="width:22%;background:var(--blue)">8,5%</div></div></div>
-      </div>
-      <div class="chart-cap">*Valores aproximados por distribuição; PE tem alta judicialização mesmo com cobertura de 10–20% da população</div>
+      <div class="chart-cap">5 estados concentram 72% das ações de saúde suplementar (concentração agregada)</div>
+      <ul style="padding-left:22px;margin:12px 0">
+        <li>São Paulo</li>
+        <li>Bahia</li>
+        <li>Rio de Janeiro</li>
+        <li>Pernambuco</li>
+        <li>Minas Gerais</li>
+      </ul>
+      <div class="chart-cap">Percentuais individuais por estado <strong>não divulgados</strong> — sem fonte primária que os sustente (a soma dos percentuais anteriormente exibidos não fechava em 72%). PE tem alta judicialização mesmo com cobertura de planos de 10–20% da população.</div>
     </div>
   </section>
 
@@ -193,25 +193,24 @@
     <h2>Principais Causas das Demandas Judiciais</h2>
     <div class="chart-card">
       <h4>Composição dos pedidos judiciais contra planos de saúde</h4>
-      <div class="chart-cap">Dados do CNJ / Fonajus (2026)</div>
+      <div class="chart-cap">Dados do CNJ / Fonajus (2026). Percentuais de 29% (reajustes/contratuais) e 13% (outros) <strong>não confirmados</strong> em fonte primária — exibidos aqui sem esses valores.</div>
       <div class="donut-wrap">
-        <div class="donut" style="background:conic-gradient(var(--red) 0% 43%, var(--blue) 43% 72%, var(--teal) 72% 87%, #e0e6ec 87% 100%)">
-          <div class="hole"><div class="pc">100%</div><div style="font-size:10px;color:var(--muted)">das ações</div></div>
+        <div class="donut" style="background:conic-gradient(var(--red) 0% 43%, var(--teal) 43% 58%, #e0e6ec 58% 100%)">
+          <div class="hole"><div class="pc">58%</div><div style="font-size:10px;color:var(--muted)">corroborado</div></div>
         </div>
         <div class="donut-legend">
           <div class="ditem"><span class="sw" style="background:var(--red)"></span>Tratamentos médico-hospitalares (43%)</div>
-          <div class="ditem"><span class="sw" style="background:var(--blue)"></span>Reajustes e questões contratuais (29%)</div>
           <div class="ditem"><span class="sw" style="background:var(--teal)"></span>Medicamentos (15%)</div>
-          <div class="ditem"><span class="sw" style="background:#e0e6ec"></span>Outros (13%)</div>
+          <div class="ditem"><span class="sw" style="background:#e0e6ec"></span>Reajustes/contratuais, outros (não confirmados)</div>
         </div>
       </div>
     </div>
     <h3>Tipos de demandas</h3>
     <ul>
-      <li><strong>Negativa de cobertura de tratamentos médico-hospitalares (43%)</strong> — quimio, imuno, internação, cirurgia; auditoria contesta prescrição.</li>
+      <li><strong>Negativa de cobertura de tratamentos médico-hospitalares (43%, corroborado)</strong> — quimio, imuno, internação, cirurgia; auditoria contesta prescrição.</li>
       <li><strong>Negativa de cobertura fora do rol da ANS</strong> — tratamentos modernos não listados.</li>
-      <li><strong>Pedidos de medicamentos (15%)</strong> — oncológicos orais (Lei 12.880/2013), doenças raras.</li>
-      <li><strong>Reajustes abusivos e questões contratuais (29%)</strong> — faixa etária, coparticipação, cancelamento.</li>
+      <li><strong>Pedidos de medicamentos (15%, corroborado)</strong> — oncológicos orais (Lei 12.880/2013), doenças raras.</li>
+      <li><strong>Reajustes abusivos e questões contratuais</strong> — faixa etária, coparticipação, cancelamento (percentual não confirmado em fonte primária).</li>
       <li><strong>Tratamentos para TEA/autismo</strong> — terapias multidisciplinares, ABA, acompanhante escolar, reembolso integral.</li>
       <li><strong>Home care</strong> — negativa de assistência domiciliar.</li>
       <li><strong>Doenças preexistentes e carência</strong> (urgência/emergência).</li>
@@ -242,15 +241,16 @@
   <section id="stj" class="section">
     <h2>Posição do STJ</h2>
     <ul>
-      <li><strong>Tema 1.365 (mar/2026):</strong> a simples negativa indevida de cobertura <strong>não gera dano moral presumido automaticamente</strong> — é preciso comprovar abalo concreto. Ressalva: urgência/emergência e cancelamento indevido seguem justificando reparação.</li>
-      <li><strong>REsp 2.100.768/MG:</strong> estando a enfermidade abrangida pela cobertura, a operadora não pode restringir métodos prescritos por profissionais habilitados, salvo experimental ou sem eficácia.</li>
-      <li><strong>Súmula 608/STJ:</strong> devolução de valores pagos a maior sujeita-se à prescrição trienal (art. 206, §3º, IV, CC).</li>
+      <li><strong>Tema 1.365 (mar/2026):</strong> a simples negativa indevida de cobertura <strong>não gera dano moral presumido automaticamente</strong> — é preciso comprovar abalo concreto. Urgência/emergência e cancelamento indevido seguem justificando reparação, mas como circunstâncias que podem demonstrar abalo concreto, não como "exceções automáticas".</li>
+      <li><strong>REsp 2.100.768/MG:</strong> estando a enfermidade abrangida pela cobertura, a operadora não pode restringir métodos prescritos por profissionais habilitados, salvo experimental ou sem eficácia. ⚠️ Não é regra absoluta — o STJ preserva exceções técnicas, experimentais e de eficácia.</li>
+      <li><strong>Tema 610/STJ:</strong> devolução de valores pagos a maior, quando decorrente da nulidade de cláusula de reajuste, sujeita-se à <strong>prescrição trienal</strong> (art. 206, §3º, IV, CC). <em>(Correção de auditoria: a Súmula 608/STJ trata da aplicação do CDC aos planos, salvo autogestão — não da prescrição trienal.)</em></li>
     </ul>
   </section>
 
   <!-- TJPE SUMULAS -->
   <section id="tjpe-sumulas" class="section">
     <h2>Posição do TJPE — Súmulas de Saúde</h2>
+    <div class="note"><strong>Natureza local:</strong> estas súmulas são <strong>jurisprudência do TJPE</strong>, não precedentes obrigatórios/vincular para todos os tribunais. Devem ser lidas à luz de precedentes superiores (STF/STJ).</div>
     <table>
       <tr><th>Súmula</th><th>Enunciado</th></tr>
       <tr><td><strong>35</strong></td><td>Negativa de cobertura fundada em cláusula abusiva pode ensejar indenização por dano moral.</td></tr>
@@ -263,6 +263,12 @@
       <tr><td><strong>172</strong></td><td>Operadora responde solidariamente por falhas de médicos/hospitais credenciados.</td></tr>
       <tr><td><strong>7</strong></td><td>Abusiva a exclusão contratual de assistência médico domiciliar (home care).</td></tr>
     </table>
+    <div class="note"><strong>Alertas de superação/conflito com o STJ:</strong>
+      <ul style="padding-left:22px;margin:8px 0 0">
+        <li><strong>Súmula 113/TJPE vs Tema 1.032/STJ:</strong> o STJ admite <strong>coparticipação de até 50%</strong> em internação psiquiátrica superior a 30 dias, se expressamente ajustada e informada — leitura da Súmula 113 deve considerar esse contraponto.</li>
+        <li><strong>Súmula 102/TJPE vs Tema 1.034/STJ:</strong> o STJ regula a <strong>manutenção de ex-empregado aposentado no plano coletivo</strong> e as condições de custeio — a Súmula 102 deve ser lida em conformidade com esse repetitivo.</li>
+      </ul>
+    </div>
   </section>
 
   <!-- TJPE CASOS -->
@@ -271,7 +277,7 @@
     <ul>
       <li><strong>1ª Câmara Cível (28/02/2023, Ap. 0005578-45.2014.8.17.0990):</strong> manteve condenação de R$ 50 mil (R$ 10 mil danos morais + R$ 40 mil despesas) a paciente com insuficiência renal que teve negado procedimento (stent vascular) sob alegação de "experimental" e "fora do rol". Rel. Des. João José Rocha Targino. Aplicou Súmulas 54 e 35 do TJPE. Dano moral <em>in re ipsa</em>.</li>
       <li><strong>3ª Câmara Cível (19/11/2019, NPU 0006384-45.2011.8.11.0001):</strong> condenou operadora por negar <strong>home care</strong> a paciente idosa (Alzheimer/Parkinson). Rel. Des. Eduardo Sertório. Aplicou Súmula 7/TJPE. Dano moral presumido.</li>
-      <li><strong>Apelação 0006329-72.2024.8.17.2480:</strong> abusiva a negativa de cobertura por ausência de previsão contratual/restrição à rede para tratamento de beneficiário com <strong>TEA</strong> (técnica ABA + acompanhamento terapêutico escolar). Devido <strong>reembolso integral</strong> de despesas em rede particular quando inexistente/inapta a rede credenciada. Dano moral configurado.</li>
+      <li><strong>Apelação 0006329-72.2024.8.17.2480:</strong> abusiva a negativa de cobertura por ausência de previsão contratual/restrição à rede para tratamento de beneficiário com <strong>TEA</strong> (técnica ABA + acompanhamento terapêutico escolar). Devido <strong>reembolso integral</strong> de despesas em rede particular quando inexistente/inapta a rede credenciada. Dano moral configurado. ⚠️ <strong>Contraponto atual (2026):</strong> o <strong>STJ</strong> afasta, em regra, a cobertura obrigatória de terapias em ambiente escolar/domiciliar ou de natureza pedagógica <strong>sem previsão contratual</strong> — não generalizar como orientação segura.</li>
     </ul>
   </section>
 
@@ -285,7 +291,7 @@
       <table>
         <tr><th>Período</th><th>Entendimento</th><th>Fonte</th></tr>
         <tr><td>Até 2022</td><td>Rol <strong>exemplificativo</strong>; dano moral in re ipsa consolidado</td><td>STJ (jurisprudência antiga)</td></tr>
-        <tr><td><strong>2022</strong></td><td>Rol <strong>taxativo mitigado</strong> — taxativo em regra, com exceções</td><td>STJ EREsp 1.886.929/SP e 1.889.704/SP; REsp 1.704.205/SP (Tema 6)</td></tr>
+        <tr><td><strong>2022</strong></td><td>Rol <strong>taxativo mitigado</strong> — taxativo em regra, com exceções</td><td>STJ EREsp 1.886.929/SP e 1.889.704/SP</td></tr>
         <tr><td><strong>2025</strong></td><td><strong>Taxatividade mitigada vinculante</strong> + 5 requisitos + prova técnica (NATJUS)</td><td>STF ADI 7.265</td></tr>
         <tr><td><strong>2026</strong></td><td>Dano moral <strong>não presumido</strong> automaticamente; exigência de prova robusta</td><td>STJ Tema 1.365</td></tr>
       </table>
@@ -297,18 +303,18 @@
       <table>
         <tr><th>Tribunal</th><th>Instrumento</th><th>Tese</th></tr>
         <tr><td>STF</td><td><strong>ADI 7.265</strong> (efeito vinculante)</td><td>Taxatividade mitigada; 5 requisitos cumulativos para cobertura fora do rol</td></tr>
-        <tr><td>STF</td><td>Temas 6, 500 e 1234 (RG)</td><td>Parâmetros de medicina baseada em evidências p/ fornecimento de medicamentos</td></tr>
-        <tr><td>STJ</td><td><strong>Tema 6</strong> (repetitivo)</td><td>Rol taxativo; negativa lícita quando há alternativa no rol</td></tr>
+        <tr><td>STF</td><td>Temas 6, 500 e 1234 (RG)</td><td>Parâmetros de medicina baseada em evidências p/ fornecimento de medicamentos — precedentes de saúde pública/SUS, não diretos sobre planos privados</td></tr>
+        <tr><td>STJ</td><td><strong>EREsp 1.886.929/SP e 1.889.704/SP</strong> (2022)</td><td>Rol taxativo mitigado; negativa lícita quando há alternativa no rol</td></tr>
         <tr><td>STJ</td><td><strong>Tema 1.365</strong> (repetitivo)</td><td>Negativa indevida não gera dano moral presumido</td></tr>
-        <tr><td>TJPE</td><td>Súmulas 35, 54, 11, 8, 136, 113, 102, 172, 7</td><td>Negativa abusiva gera dano moral; próteses/stent/home care/TEA</td></tr>
+        <tr><td>TJPE</td><td>Súmulas 35, 54, 11, 8, 136, 113, 102, 172, 7 <em>(natureza local)</em></td><td>Negativa abusiva gera dano moral; próteses/stent/home care/TEA</td></tr>
       </table>
     </div>
 
     <h3>Posição contrária — riscos da estratégia (P5)</h3>
     <div class="note">
       <ul>
-        <li><strong>STJ Tema 6:</strong> a negativa é <strong>lícita</strong> quando existe alternativa terapêutica adequada no rol — a operadora vence se provar substituto eficaz.</li>
-        <li><strong>ADI 7.265:</strong> sem os 5 requisitos cumulativos, o pedido fora do rol é improcedente; decisão sem prova técnica (NATJUS) é <strong>nula</strong> (arts. 489 §1º, V e VI; 927, III, CPC).</li>
+        <li><strong>Rol taxativo mitigado (EREsp 2022 + ADI 7.265):</strong> a negativa é <strong>lícita</strong> quando existe alternativa terapêutica adequada no rol — a operadora vence se provar substituto eficaz, ou se faltar qualquer um dos 5 requisitos cumulativos.</li>
+        <li><strong>ADI 7.265:</strong> sem os 5 requisitos cumulativos, o pedido fora do rol é improcedente; <strong>decisão sem prova técnica é viciada</strong> — deve haver <strong>consulta ao NATJUS sempre que disponível</strong> (ou outra expertise técnica qualificada), não decisão baseada só em laudo unilateral (arts. 489 §1º, V e VI; 927, III, CPC; Tema 1.316/STJ). A nulidade não decorre da simples ausência formal da palavra NATJUS.</li>
         <li><strong>Tema 1.365:</strong> dano moral exige abalo concreto — negativa isolada não basta.</li>
         <li><strong>Experimental / sem Anvisa:</strong> risco alto de improcedência (STF Tema 500).</li>
         <li><strong>Carência / doença preexistente:</strong> cobertura legítima (exceto urgência/emergência).</li>
@@ -321,7 +327,7 @@
       <table>
         <tr><th>#</th><th>Ação</th></tr>
         <tr><td>1</td><td>Organizar a prova dos <strong>5 requisitos da ADI 7.265</strong> (não apenas prescrição): laudo + evidência científica + registro Anvisa + ausência de alternativa + sem negativa da ANS</td></tr>
-        <tr><td>2</td><td>Exigir a <strong>negativa por escrito</strong> da operadora (pré-requisito processual exigido pelo STF)</td></tr>
+        <tr><td>2</td><td>Comprovar o <strong>prévio requerimento</strong> à operadora e a <strong>negativa, mora irrazoável ou omissão</strong> (Tema 1.316/STJ, aplicando a ADI 7.265). A prova da negativa não precisa ser apenas "por escrito" — deve demonstrar que o consumidor provocou a operadora e foi recusado, houve demora excessiva ou omissão.</td></tr>
         <tr><td>3</td><td>Pedir <strong>tutela de urgência</strong> em casos de risco (art. 300 CPC)</td></tr>
         <tr><td>4</td><td>Reforçar com <strong>Súmulas 35, 54 e 7 do TJPE</strong> em Pernambuco</td></tr>
         <tr><td>5</td><td>Cuidado com o <strong>dano moral</strong>: provar abalo concreto (pós-Tema 1.365), exceto urgência/emergência/cancelamento indevido</td></tr>
@@ -345,7 +351,7 @@
         <tr><td>5. Pressão no SUS</td><td>Saúde pública absorve a demanda, aumentando a judicialização do sistema</td></tr>
       </table>
     </div>
-    <p><strong>Tendência:</strong> com os critérios do STF (ADI 7.265) e o Tema 1.365 do STJ, espera-se <strong>queda de novos processos em 1–2 anos</strong>, mas com <strong>exigência de prova técnica robusta</strong> (não basta prescrição médica).</p>
+    <p><strong>Tendência (projeção setorial, não fato demonstrado):</strong> com os critérios do STF (ADI 7.265) e o Tema 1.365 do STJ, <strong>estima-se queda de novos processos em 1–2 anos</strong>, com <strong>exigência de prova técnica robusta</strong> (não basta prescrição médica).</p>
   </section>
 
   <!-- FONTES -->
@@ -362,7 +368,7 @@
       <li>Rosenbaum Advogados; Noviello; Mesko Dias Advogados</li>
     </ul>
     <div class="footer">
-      Relatório gerado por Hermes Agent · 25/08/2026 · Fonte: TikTok @investnewsbr + portais de direito e imprensa
+      Relatório gerado por Hermes Agent · 25/08/2026 · v2 auditada (correções de jurisprudência aplicadas em 25/08/2026) · Fonte: TikTok @investnewsbr + CNJ, STF, STJ, TJPE e portais de direito e imprensa
     </div>
   </section>
 
